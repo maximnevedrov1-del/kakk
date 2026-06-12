@@ -287,94 +287,74 @@
         </div>
       </div>
       <div class="hero-visual reveal">
-        <svg viewBox="0 0 560 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Иллюстрация чистого помещения с ламинарным потоком воздуха">
+        <svg viewBox="0 0 560 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Семинар ассоциации: докладчик у экрана и аудитория специалистов">
           <defs>
             <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0" stop-color="#2C2619"/>
               <stop offset="1" stop-color="#1A1710"/>
             </linearGradient>
-            <radialGradient id="glow" cx="50%" cy="20%" r="62%">
+            <radialGradient id="glow" cx="50%" cy="18%" r="62%">
               <stop offset="0" stop-color="#B8924A" stop-opacity="0.24"/>
               <stop offset="1" stop-color="#B8924A" stop-opacity="0"/>
             </radialGradient>
-            <pattern id="hepa" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <line x1="0" y1="0" x2="0" y2="7" stroke="#B8924A" stroke-width="1" opacity="0.45"/>
-            </pattern>
-            <marker id="ah" markerWidth="10" markerHeight="10" refX="5" refY="7" orient="auto">
-              <path d="M1.5,1.5 L5,7 L8.5,1.5" fill="none" stroke="#D4B36E" stroke-width="1.2" stroke-linecap="round"/>
-            </marker>
           </defs>
 
           <!-- panel -->
           <rect x="8" y="8" width="544" height="524" rx="22" fill="url(#panel)" stroke="#B8924A" stroke-opacity="0.48"/>
           <rect x="8" y="8" width="544" height="524" rx="22" fill="url(#glow)"/>
 
-          <!-- room shell (slight perspective) -->
-          <path d="M70,108 L490,108 L516,470 L44,470 Z" fill="none" stroke="#B8924A" stroke-opacity="0.55" stroke-width="1.3"/>
-          <line x1="70" y1="108" x2="44" y2="470" stroke="#B8924A" stroke-opacity="0.18" stroke-width="1"/>
-          <line x1="490" y1="108" x2="516" y2="470" stroke="#B8924A" stroke-opacity="0.18" stroke-width="1"/>
-
-          <!-- HEPA ceiling -->
-          <g stroke="#B8924A" stroke-opacity="0.7">
-            <rect x="86" y="74" width="80" height="34" rx="3" fill="url(#hepa)"/>
-            <rect x="172" y="74" width="80" height="34" rx="3" fill="url(#hepa)"/>
-            <rect x="258" y="74" width="80" height="34" rx="3" fill="url(#hepa)"/>
-            <rect x="344" y="74" width="80" height="34" rx="3" fill="url(#hepa)"/>
-            <rect x="430" y="74" width="48" height="34" rx="3" fill="url(#hepa)"/>
-          </g>
-          <rect x="70" y="58" width="420" height="18" rx="4" fill="none" stroke="#D4B36E" stroke-opacity="0.6"/>
-
-          <!-- laminar downflow -->
-          <g stroke="#D4B36E" stroke-opacity="0.55" stroke-width="1.2" stroke-dasharray="2 9" marker-end="url(#ah)">
-            <line x1="126" y1="118" x2="126" y2="250"/>
-            <line x1="212" y1="118" x2="212" y2="300"/>
-            <line x1="298" y1="118" x2="298" y2="270"/>
-            <line x1="384" y1="118" x2="384" y2="300"/>
-            <line x1="452" y1="118" x2="452" y2="250"/>
+          <!-- presentation screen -->
+          <g stroke="#B8924A" fill="none">
+            <rect x="158" y="66" width="304" height="156" rx="9" stroke-opacity="0.78" stroke-width="1.5" fill="#B8924A" fill-opacity="0.05"/>
+            <!-- slide title + bullets -->
+            <line x1="186" y1="98" x2="318" y2="98" stroke="#D4B36E" stroke-opacity="0.85" stroke-width="3"/>
+            <line x1="186" y1="124" x2="312" y2="124" stroke="#D4B36E" stroke-opacity="0.42" stroke-width="1.4"/>
+            <line x1="186" y1="146" x2="292" y2="146" stroke="#D4B36E" stroke-opacity="0.42" stroke-width="1.4"/>
+            <line x1="186" y1="168" x2="306" y2="168" stroke="#D4B36E" stroke-opacity="0.42" stroke-width="1.4"/>
+            <circle cx="176" cy="124" r="2.5" fill="#D4B36E" stroke="none" fill-opacity="0.75"/>
+            <circle cx="176" cy="146" r="2.5" fill="#D4B36E" stroke="none" fill-opacity="0.75"/>
+            <circle cx="176" cy="168" r="2.5" fill="#D4B36E" stroke="none" fill-opacity="0.75"/>
+            <!-- topic target diagram -->
+            <circle cx="400" cy="144" r="30" stroke-opacity="0.5"/>
+            <circle cx="400" cy="144" r="19" stroke-opacity="0.62"/>
+            <circle cx="400" cy="144" r="8" stroke-opacity="0.72"/>
+            <circle cx="400" cy="144" r="2.6" fill="#D4B36E" stroke="none"/>
+            <!-- screen stand -->
+            <line x1="310" y1="222" x2="310" y2="244" stroke-opacity="0.5"/>
+            <line x1="288" y1="244" x2="332" y2="244" stroke-opacity="0.5"/>
           </g>
 
-          <!-- floating particles -->
-          <g fill="#D4B36E">
-            <circle cx="160" cy="180" r="2.4" opacity=".7"/>
-            <circle cx="250" cy="150" r="1.7" opacity=".5"/>
-            <circle cx="330" cy="210" r="2.1" opacity=".6"/>
-            <circle cx="408" cy="170" r="1.6" opacity=".45"/>
-            <circle cx="200" cy="240" r="1.5" opacity=".5"/>
-            <circle cx="360" cy="150" r="2.6" opacity=".65"/>
-            <circle cx="120" cy="210" r="1.6" opacity=".4"/>
+          <!-- presenter (points at slide) -->
+          <g stroke="#D4B36E" stroke-opacity="0.95" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="92" cy="250" r="14" fill="#B8924A" fill-opacity="0.10"/>
+            <path d="M72,304 q20,-26 40,0 L108,366 q-16,5 -32,0 Z" fill="#B8924A" fill-opacity="0.08"/>
+            <path d="M106,302 q34,-34 56,-66" stroke-opacity="0.85"/>
           </g>
 
-          <!-- laminar-flow workbench / isolator (right) -->
-          <g stroke="#B8924A" stroke-opacity="0.8" fill="none" stroke-width="1.3">
-            <rect x="330" y="300" width="150" height="78" rx="4"/>
-            <line x1="330" y1="322" x2="480" y2="322"/>
-            <rect x="346" y="332" width="40" height="38" rx="2" stroke-opacity="0.55"/>
-            <circle cx="430" cy="350" r="13" stroke-opacity="0.6"/>
-            <line x1="430" y1="337" x2="430" y2="363" stroke-opacity="0.4"/>
-            <line x1="417" y1="350" x2="443" y2="350" stroke-opacity="0.4"/>
-            <line x1="336" y1="378" x2="336" y2="440"/>
-            <line x1="474" y1="378" x2="474" y2="440"/>
+          <!-- audience, seen from behind, facing the screen -->
+          <g fill="#B8924A" fill-opacity="0.07" stroke="#D4B36E" stroke-width="1.3" stroke-linejoin="round">
+            <g stroke-opacity="0.42">
+              <g><circle cx="190" cy="324" r="9"/><path d="M168,346 C168,331 212,331 212,346"/></g>
+              <g><circle cx="258" cy="324" r="9"/><path d="M236,346 C236,331 280,331 280,346"/></g>
+              <g><circle cx="326" cy="324" r="9"/><path d="M304,346 C304,331 348,331 348,346"/></g>
+              <g><circle cx="394" cy="324" r="9"/><path d="M372,346 C372,331 416,331 416,346"/></g>
+            </g>
+            <g stroke-opacity="0.66">
+              <g><circle cx="206" cy="376" r="12"/><path d="M178,404 C178,385 234,385 234,404"/></g>
+              <g><circle cx="296" cy="376" r="12"/><path d="M268,404 C268,385 324,385 324,404"/></g>
+              <g><circle cx="386" cy="376" r="12"/><path d="M358,404 C358,385 414,385 414,404"/></g>
+            </g>
+            <g stroke-opacity="0.92" stroke-width="1.5">
+              <g><circle cx="186" cy="434" r="15"/><path d="M153,470 C153,446 219,446 219,470"/></g>
+              <g><circle cx="296" cy="434" r="15"/><path d="M263,470 C263,446 329,446 329,470"/></g>
+              <g><circle cx="406" cy="434" r="15"/><path d="M373,470 C373,446 439,446 439,470"/></g>
+            </g>
           </g>
 
-          <!-- gowned technician (left) -->
-          <g stroke="#D4B36E" stroke-opacity="0.9" fill="none" stroke-width="1.4" stroke-linejoin="round">
-            <path d="M150,232 a26,29 0 1,1 0.1,0"/>
-            <path d="M132,236 q18,14 36,0" stroke-opacity="0.5"/>
-            <path d="M135,224 h30" stroke-opacity="0.55"/>
-            <path d="M124,266 q26,-12 52,0 L196,452 q-46,12 -92,0 Z" fill="#B8924A" fill-opacity="0.06"/>
-            <path d="M150,272 L150,452" stroke-opacity="0.3"/>
-            <path d="M128,286 q-22,40 -10,84" stroke-opacity="0.7"/>
-            <path d="M172,286 q26,30 64,18" stroke-opacity="0.7"/>
-          </g>
-
-          <!-- raised perforated floor -->
-          <line x1="44" y1="470" x2="516" y2="470" stroke="#B8924A" stroke-opacity="0.5" stroke-width="1.3"/>
-          <g fill="#B8924A" fill-opacity="0.5">
-            <circle cx="90" cy="486" r="2"/><circle cx="140" cy="486" r="2"/><circle cx="190" cy="486" r="2"/><circle cx="240" cy="486" r="2"/><circle cx="290" cy="486" r="2"/><circle cx="340" cy="486" r="2"/><circle cx="390" cy="486" r="2"/><circle cx="440" cy="486" r="2"/><circle cx="490" cy="486" r="2"/>
-            <circle cx="115" cy="504" r="2.3" fill-opacity="0.35"/><circle cx="175" cy="504" r="2.3" fill-opacity="0.35"/><circle cx="235" cy="504" r="2.3" fill-opacity="0.35"/><circle cx="295" cy="504" r="2.3" fill-opacity="0.35"/><circle cx="355" cy="504" r="2.3" fill-opacity="0.35"/><circle cx="415" cy="504" r="2.3" fill-opacity="0.35"/>
-          </g>
+          <!-- floor line -->
+          <line x1="46" y1="482" x2="514" y2="482" stroke="#B8924A" stroke-opacity="0.4" stroke-width="1.3"/>
         </svg>
-        <span class="vlabel">ISO 14644 · Class 5</span>
+        <span class="vlabel">Конференции · Семинары · Обучение</span>
       </div>
     </div>
   </section>
