@@ -142,8 +142,16 @@
   .hero-grid{position:absolute;inset:0;opacity:.04;
     background-image:linear-gradient(var(--gold) 1px,transparent 1px),linear-gradient(90deg,var(--gold) 1px,transparent 1px);
     background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 70% at 60% 40%,#000,transparent 75%);}
-  .hero-inner{position:relative;max-width:880px}
-  .hero h1{font-size:clamp(2.6rem,6.2vw,5rem);font-weight:400;letter-spacing:-.01em;margin-bottom:30px}
+  .hero-inner{position:relative;max-width:1180px;display:grid;grid-template-columns:1.08fr .92fr;gap:54px;align-items:center}
+  .hero-copy{max-width:640px}
+  .hero-visual{position:relative}
+  .hero-visual svg{width:100%;height:auto;display:block;filter:drop-shadow(0 30px 60px rgba(0,0,0,.5))}
+  .hero-visual .vlabel{
+    position:absolute;left:18px;bottom:16px;font-family:'Inter';font-size:.66rem;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+    background:rgba(22,20,15,.7);padding:7px 12px;border:1px solid var(--line);border-radius:30px;
+  }
+  .hero h1{font-size:clamp(2.4rem,5.2vw,4.4rem);font-weight:400;letter-spacing:-.01em;margin-bottom:30px}
   .hero h1 em{font-style:italic;color:var(--gold-light)}
   .hero p.lead{font-size:clamp(1.05rem,1.8vw,1.32rem);color:var(--cream-dim);max-width:620px;font-weight:300;margin-bottom:44px}
   .hero-actions{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
@@ -167,6 +175,9 @@
   .stat{background:var(--ink);padding:38px 28px}
   .stat .num{font-family:'Fraunces',serif;font-size:2.6rem;color:var(--gold-light);line-height:1}
   .stat .lbl{color:var(--cream-dim);font-size:.9rem;margin-top:12px}
+  .about-band{margin-top:26px;border:1px solid var(--line);border-radius:14px;background:var(--ink-soft);padding:30px 30px 24px;overflow:hidden}
+  .about-band .cap{color:var(--cream-dim);font-size:.92rem;margin-bottom:6px}
+  .about-band svg{width:100%;height:auto;display:block}
 
   /* Mission cards */
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -175,7 +186,8 @@
     padding:40px 34px;transition:transform .3s,border-color .3s;
   }
   .card:hover{transform:translateY(-6px);border-color:var(--gold)}
-  .card .ico{width:46px;height:46px;border:1px solid var(--gold);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--gold-light);font-size:1.3rem;margin-bottom:26px}
+  .card .ico{width:52px;height:52px;border:1px solid var(--gold);border-radius:13px;display:flex;align-items:center;justify-content:center;color:var(--gold-light);margin-bottom:26px;background:rgba(184,146,74,0.05)}
+  .card .ico svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
   .card h3{font-size:1.4rem;margin-bottom:14px}
   .card p{color:var(--cream-dim);font-size:.98rem}
 
@@ -224,6 +236,9 @@
   @media(max-width:860px){
     .nav-links,.nav-cta{display:none}
     .burger{display:flex}
+    .hero-inner{grid-template-columns:1fr;gap:38px}
+    .hero-visual{max-width:460px;margin:0 auto;order:2}
+    .hero-copy{order:1}
     .stats{grid-template-columns:repeat(2,1fr)}
     .cards{grid-template-columns:1fr}
     .standards{grid-template-columns:1fr}
@@ -262,12 +277,104 @@
   <section class="hero">
     <div class="hero-grid"></div>
     <div class="wrap hero-inner">
-      <span class="eyebrow">CCCS · Контроль контаминации · Казахстан</span>
-      <h1>Казахстанская Ассоциация <em>Контроля Контаминации</em></h1>
-      <p class="lead">Профессиональное объединение специалистов и предприятий, для которых чистота среды — условие качества. Мы развиваем культуру чистых помещений, контроля частиц и электростатической безопасности в Казахстане.</p>
-      <div class="hero-actions">
-        <a href="#membership" class="btn-primary">Стать членом ассоциации</a>
-        <a href="#about" class="btn-ghost">Узнать больше →</a>
+      <div class="hero-copy">
+        <span class="eyebrow">CCCS · Контроль контаминации · Казахстан</span>
+        <h1>Казахстанская Ассоциация <em>Контроля Контаминации</em></h1>
+        <p class="lead">Профессиональное объединение специалистов и предприятий, для которых чистота среды — условие качества. Мы развиваем культуру чистых помещений, контроля частиц и электростатической безопасности в Казахстане.</p>
+        <div class="hero-actions">
+          <a href="#membership" class="btn-primary">Стать членом ассоциации</a>
+          <a href="#about" class="btn-ghost">Узнать больше →</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <svg viewBox="0 0 560 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Иллюстрация чистого помещения с ламинарным потоком воздуха">
+          <defs>
+            <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#211D15"/>
+              <stop offset="1" stop-color="#14120D"/>
+            </linearGradient>
+            <radialGradient id="glow" cx="50%" cy="20%" r="62%">
+              <stop offset="0" stop-color="#B8924A" stop-opacity="0.18"/>
+              <stop offset="1" stop-color="#B8924A" stop-opacity="0"/>
+            </radialGradient>
+            <pattern id="hepa" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <line x1="0" y1="0" x2="0" y2="7" stroke="#B8924A" stroke-width="1" opacity="0.45"/>
+            </pattern>
+            <marker id="ah" markerWidth="10" markerHeight="10" refX="5" refY="7" orient="auto">
+              <path d="M1.5,1.5 L5,7 L8.5,1.5" fill="none" stroke="#D4B36E" stroke-width="1.2" stroke-linecap="round"/>
+            </marker>
+          </defs>
+
+          <!-- panel -->
+          <rect x="8" y="8" width="544" height="524" rx="22" fill="url(#panel)" stroke="#B8924A" stroke-opacity="0.32"/>
+          <rect x="8" y="8" width="544" height="524" rx="22" fill="url(#glow)"/>
+
+          <!-- room shell (slight perspective) -->
+          <path d="M70,108 L490,108 L516,470 L44,470 Z" fill="none" stroke="#B8924A" stroke-opacity="0.55" stroke-width="1.3"/>
+          <line x1="70" y1="108" x2="44" y2="470" stroke="#B8924A" stroke-opacity="0.18" stroke-width="1"/>
+          <line x1="490" y1="108" x2="516" y2="470" stroke="#B8924A" stroke-opacity="0.18" stroke-width="1"/>
+
+          <!-- HEPA ceiling -->
+          <g stroke="#B8924A" stroke-opacity="0.7">
+            <rect x="86" y="74" width="80" height="34" rx="3" fill="url(#hepa)"/>
+            <rect x="172" y="74" width="80" height="34" rx="3" fill="url(#hepa)"/>
+            <rect x="258" y="74" width="80" height="34" rx="3" fill="url(#hepa)"/>
+            <rect x="344" y="74" width="80" height="34" rx="3" fill="url(#hepa)"/>
+            <rect x="430" y="74" width="48" height="34" rx="3" fill="url(#hepa)"/>
+          </g>
+          <rect x="70" y="58" width="420" height="18" rx="4" fill="none" stroke="#D4B36E" stroke-opacity="0.6"/>
+
+          <!-- laminar downflow -->
+          <g stroke="#D4B36E" stroke-opacity="0.55" stroke-width="1.2" stroke-dasharray="2 9" marker-end="url(#ah)">
+            <line x1="126" y1="118" x2="126" y2="250"/>
+            <line x1="212" y1="118" x2="212" y2="300"/>
+            <line x1="298" y1="118" x2="298" y2="270"/>
+            <line x1="384" y1="118" x2="384" y2="300"/>
+            <line x1="452" y1="118" x2="452" y2="250"/>
+          </g>
+
+          <!-- floating particles -->
+          <g fill="#D4B36E">
+            <circle cx="160" cy="180" r="2.4" opacity=".7"/>
+            <circle cx="250" cy="150" r="1.7" opacity=".5"/>
+            <circle cx="330" cy="210" r="2.1" opacity=".6"/>
+            <circle cx="408" cy="170" r="1.6" opacity=".45"/>
+            <circle cx="200" cy="240" r="1.5" opacity=".5"/>
+            <circle cx="360" cy="150" r="2.6" opacity=".65"/>
+            <circle cx="120" cy="210" r="1.6" opacity=".4"/>
+          </g>
+
+          <!-- laminar-flow workbench / isolator (right) -->
+          <g stroke="#B8924A" stroke-opacity="0.8" fill="none" stroke-width="1.3">
+            <rect x="330" y="300" width="150" height="78" rx="4"/>
+            <line x1="330" y1="322" x2="480" y2="322"/>
+            <rect x="346" y="332" width="40" height="38" rx="2" stroke-opacity="0.55"/>
+            <circle cx="430" cy="350" r="13" stroke-opacity="0.6"/>
+            <line x1="430" y1="337" x2="430" y2="363" stroke-opacity="0.4"/>
+            <line x1="417" y1="350" x2="443" y2="350" stroke-opacity="0.4"/>
+            <line x1="336" y1="378" x2="336" y2="440"/>
+            <line x1="474" y1="378" x2="474" y2="440"/>
+          </g>
+
+          <!-- gowned technician (left) -->
+          <g stroke="#D4B36E" stroke-opacity="0.9" fill="none" stroke-width="1.4" stroke-linejoin="round">
+            <path d="M150,232 a26,29 0 1,1 0.1,0"/>
+            <path d="M132,236 q18,14 36,0" stroke-opacity="0.5"/>
+            <path d="M135,224 h30" stroke-opacity="0.55"/>
+            <path d="M124,266 q26,-12 52,0 L196,452 q-46,12 -92,0 Z" fill="#B8924A" fill-opacity="0.06"/>
+            <path d="M150,272 L150,452" stroke-opacity="0.3"/>
+            <path d="M128,286 q-22,40 -10,84" stroke-opacity="0.7"/>
+            <path d="M172,286 q26,30 64,18" stroke-opacity="0.7"/>
+          </g>
+
+          <!-- raised perforated floor -->
+          <line x1="44" y1="470" x2="516" y2="470" stroke="#B8924A" stroke-opacity="0.5" stroke-width="1.3"/>
+          <g fill="#B8924A" fill-opacity="0.5">
+            <circle cx="90" cy="486" r="2"/><circle cx="140" cy="486" r="2"/><circle cx="190" cy="486" r="2"/><circle cx="240" cy="486" r="2"/><circle cx="290" cy="486" r="2"/><circle cx="340" cy="486" r="2"/><circle cx="390" cy="486" r="2"/><circle cx="440" cy="486" r="2"/><circle cx="490" cy="486" r="2"/>
+            <circle cx="115" cy="504" r="2.3" fill-opacity="0.35"/><circle cx="175" cy="504" r="2.3" fill-opacity="0.35"/><circle cx="235" cy="504" r="2.3" fill-opacity="0.35"/><circle cx="295" cy="504" r="2.3" fill-opacity="0.35"/><circle cx="355" cy="504" r="2.3" fill-opacity="0.35"/><circle cx="415" cy="504" r="2.3" fill-opacity="0.35"/>
+          </g>
+        </svg>
+        <span class="vlabel">ISO 14644 · Class 5</span>
       </div>
     </div>
   </section>
@@ -288,6 +395,52 @@
         <div class="stat"><div class="num">ICCCS</div><div class="lbl">ориентир на международную практику</div></div>
         <div class="stat"><div class="num">KZ</div><div class="lbl">единая площадка для рынка Казахстана</div></div>
       </div>
+
+      <div class="about-band reveal">
+        <div class="cap">Классы чистоты по ISO 14644 — от обычного воздуха к контролируемой среде</div>
+        <svg viewBox="0 0 1080 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Шкала классов чистоты ISO 14644">
+          <defs>
+            <linearGradient id="scale" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#B8924A" stop-opacity="0.25"/>
+              <stop offset="1" stop-color="#D4B36E" stop-opacity="0.9"/>
+            </linearGradient>
+          </defs>
+          <!-- ambient particles fading left->right -->
+          <g fill="#B8924A">
+            <circle cx="70" cy="34" r="3" opacity=".55"/><circle cx="120" cy="58" r="2.4" opacity=".5"/><circle cx="95" cy="74" r="2.8" opacity=".5"/><circle cx="160" cy="40" r="2.2" opacity=".45"/><circle cx="190" cy="66" r="2.6" opacity=".4"/><circle cx="230" cy="36" r="2" opacity=".38"/><circle cx="270" cy="60" r="2.3" opacity=".34"/><circle cx="330" cy="44" r="1.9" opacity=".28"/><circle cx="420" cy="56" r="1.8" opacity=".22"/><circle cx="520" cy="40" r="1.6" opacity=".18"/><circle cx="650" cy="54" r="1.5" opacity=".14"/><circle cx="820" cy="42" r="1.4" opacity=".1"/>
+          </g>
+          <!-- baseline -->
+          <line x1="70" y1="96" x2="1010" y2="96" stroke="url(#scale)" stroke-width="2"/>
+          <!-- nodes -->
+          <g font-family="Fraunces, Georgia, serif" text-anchor="middle">
+            <g>
+              <circle cx="120" cy="96" r="9" fill="none" stroke="#B8924A" stroke-width="1.4"/>
+              <text x="120" y="80" fill="#D4B36E" font-size="20">ISO 9</text>
+              <text x="120" y="124" fill="#C9C2B2" font-size="12" font-family="Inter,sans-serif">обычный воздух</text>
+            </g>
+            <g>
+              <circle cx="343" cy="96" r="9" fill="none" stroke="#B8924A" stroke-width="1.4"/>
+              <text x="343" y="80" fill="#D4B36E" font-size="20">ISO 8</text>
+              <text x="343" y="124" fill="#C9C2B2" font-size="12" font-family="Inter,sans-serif">контролируемая зона</text>
+            </g>
+            <g>
+              <circle cx="566" cy="96" r="9" fill="none" stroke="#B8924A" stroke-width="1.4"/>
+              <text x="566" y="80" fill="#D4B36E" font-size="20">ISO 7</text>
+              <text x="566" y="124" fill="#C9C2B2" font-size="12" font-family="Inter,sans-serif">чистое помещение</text>
+            </g>
+            <g>
+              <circle cx="789" cy="96" r="9" fill="none" stroke="#B8924A" stroke-width="1.4"/>
+              <text x="789" y="80" fill="#D4B36E" font-size="20">ISO 6</text>
+              <text x="789" y="124" fill="#C9C2B2" font-size="12" font-family="Inter,sans-serif">высокая чистота</text>
+            </g>
+            <g>
+              <circle cx="966" cy="96" r="11" fill="#B8924A" fill-opacity="0.18" stroke="#D4B36E" stroke-width="1.6"/>
+              <text x="966" y="78" fill="#F4EEE2" font-size="20">ISO 5</text>
+              <text x="966" y="124" fill="#C9C2B2" font-size="12" font-family="Inter,sans-serif">критические процессы</text>
+            </g>
+          </g>
+        </svg>
+      </div>
     </div>
   </section>
 
@@ -301,17 +454,17 @@
       </div>
       <div class="cards">
         <div class="card reveal">
-          <div class="ico">◇</div>
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z" stroke-opacity="0.5"/><path d="M6 5h7l4 4v12H6z"/><path d="M13 5v4h4"/><path d="M9 13h6M9 16.5h6"/><path d="M9 9.5l1.4 1.4 2.4-2.6" stroke="#D4B36E"/></svg></div>
           <h3>Стандарты и методики</h3>
           <p>Адаптация и продвижение международных норм ISO 14644, GMP и ESD-стандартов для условий казахстанских предприятий, единые подходы к классификации и контролю.</p>
         </div>
         <div class="card reveal">
-          <div class="ico">◈</div>
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M2 9l10-4 10 4-10 4z"/><path d="M6 11v4.5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V11"/><path d="M22 9v5"/></svg></div>
           <h3>Обучение и аттестация</h3>
           <p>Семинары, курсы и профессиональная подготовка специалистов по чистым помещениям, контролю частиц и электростатической безопасности.</p>
         </div>
         <div class="card reveal">
-          <div class="ico">◉</div>
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/><path d="M10.6 6.9L6.4 15M13.4 6.9L17.6 15M7.4 17h9.2"/></svg></div>
           <h3>Экспертиза и сообщество</h3>
           <p>Площадка для обмена опытом, независимой оценки, консультаций и взаимодействия предприятий, поставщиков и регуляторов отрасли.</p>
         </div>
