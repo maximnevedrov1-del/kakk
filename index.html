@@ -75,13 +75,15 @@
 
 <style>
   :root{
-    --ink:#16140F;
-    --ink-soft:#1E1B14;
-    --cream:#F4EEE2;
-    --cream-dim:#C9C2B2;
-    --gold:#B8924A;
-    --gold-light:#D4B36E;
-    --line:rgba(184,146,74,0.22);
+    --ink:#0B141A;
+    --ink-soft:#13222E;
+    --cream:#E9F1F5;
+    --cream-dim:#9DB3C0;
+    --gold:#2C9CC4;
+    --gold-light:#4FC3E8;
+    --accent:#CBA14E;
+    --accent-light:#E2C079;
+    --line:rgba(44,156,196,0.22);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -100,7 +102,7 @@
   .gold{color:var(--gold-light)}
   .eyebrow{
     font-family:'Inter',sans-serif;font-weight:500;font-size:.72rem;
-    letter-spacing:.28em;text-transform:uppercase;color:var(--gold);
+    letter-spacing:.28em;text-transform:uppercase;color:var(--accent);
     display:inline-block;margin-bottom:22px;
   }
 
@@ -115,9 +117,9 @@
   .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
   .brand{display:flex;align-items:center;gap:14px;font-family:'Fraunces',serif;font-size:1.2rem;letter-spacing:.02em}
   .brand .mark{
-    width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;
+    width:38px;height:38px;border:1px solid var(--accent);border-radius:50%;
     display:flex;align-items:center;justify-content:center;
-    font-size:.82rem;letter-spacing:.04em;color:var(--gold-light);flex-shrink:0;
+    font-size:.82rem;letter-spacing:.04em;color:var(--accent-light);flex-shrink:0;
   }
   .nav-links{display:flex;gap:38px;font-family:'Inter';font-size:.86rem;font-weight:400;letter-spacing:.02em}
   .nav-links a{color:var(--cream-dim);transition:color .2s}
@@ -136,8 +138,8 @@
     min-height:100vh;display:flex;align-items:center;position:relative;
     padding:120px 0 80px;
     background:
-      radial-gradient(ellipse 70% 50% at 75% 30%, rgba(184,146,74,0.10), transparent 60%),
-      radial-gradient(ellipse 60% 60% at 10% 90%, rgba(184,146,74,0.06), transparent 60%);
+      radial-gradient(ellipse 70% 50% at 75% 30%, rgba(44,156,196,0.10), transparent 60%),
+      radial-gradient(ellipse 60% 60% at 10% 90%, rgba(44,156,196,0.06), transparent 60%);
   }
   .hero-grid{position:absolute;inset:0;opacity:.04;
     background-image:linear-gradient(var(--gold) 1px,transparent 1px),linear-gradient(90deg,var(--gold) 1px,transparent 1px);
@@ -152,7 +154,7 @@
     background:rgba(22,20,15,.7);padding:7px 12px;border:1px solid var(--line);border-radius:30px;
   }
   .hero h1{font-size:clamp(2.4rem,5.2vw,4.4rem);font-weight:400;letter-spacing:-.01em;margin-bottom:30px}
-  .hero h1 em{font-style:italic;color:var(--gold-light)}
+  .hero h1 em{font-style:italic;color:var(--accent-light)}
   .hero p.lead{font-size:clamp(1.05rem,1.8vw,1.32rem);color:var(--cream-dim);max-width:620px;font-weight:300;margin-bottom:44px}
   .hero-actions{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
   .btn-primary{
@@ -173,7 +175,7 @@
   /* About stats */
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:54px}
   .stat{background:var(--ink);padding:38px 28px}
-  .stat .num{font-family:'Fraunces',serif;font-size:2.6rem;color:var(--gold-light);line-height:1}
+  .stat .num{font-family:'Fraunces',serif;font-size:2.6rem;color:var(--accent-light);line-height:1}
   .stat .lbl{color:var(--cream-dim);font-size:.9rem;margin-top:12px}
   .about-band{margin-top:26px;border:1px solid var(--line);border-radius:14px;background:var(--ink-soft);padding:30px 30px 24px;overflow:hidden}
   .about-band .cap{color:var(--cream-dim);font-size:.92rem;margin-bottom:6px}
@@ -186,7 +188,7 @@
     padding:40px 34px;transition:transform .3s,border-color .3s;
   }
   .card:hover{transform:translateY(-6px);border-color:var(--gold)}
-  .card .ico{width:52px;height:52px;border:1px solid var(--gold);border-radius:13px;display:flex;align-items:center;justify-content:center;color:var(--gold-light);margin-bottom:26px;background:rgba(184,146,74,0.05)}
+  .card .ico{width:52px;height:52px;border:1px solid var(--gold);border-radius:13px;display:flex;align-items:center;justify-content:center;color:var(--gold-light);margin-bottom:26px;background:rgba(44,156,196,0.05)}
   .card .ico svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
   .card h3{font-size:1.4rem;margin-bottom:14px}
   .card p{color:var(--cream-dim);font-size:.98rem}
@@ -201,17 +203,17 @@
   /* Membership */
   .members{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:10px}
   .tier{background:var(--ink-soft);border:1px solid var(--line);border-radius:16px;padding:40px 34px;display:flex;flex-direction:column}
-  .tier.feat{border-color:var(--gold);background:linear-gradient(180deg,rgba(184,146,74,0.08),var(--ink-soft))}
+  .tier.feat{border-color:var(--gold);background:linear-gradient(180deg,rgba(44,156,196,0.08),var(--ink-soft))}
   .tier h3{font-size:1.5rem;margin-bottom:8px}
   .tier .who{color:var(--gold-light);font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:24px}
   .tier ul{list-style:none;margin:0 0 30px;flex:1}
-  .tier li{color:var(--cream-dim);font-size:.95rem;padding:9px 0 9px 26px;position:relative;border-bottom:1px solid rgba(184,146,74,0.10)}
+  .tier li{color:var(--cream-dim);font-size:.95rem;padding:9px 0 9px 26px;position:relative;border-bottom:1px solid rgba(44,156,196,0.10)}
   .tier li::before{content:"";position:absolute;left:0;top:17px;width:7px;height:7px;border:1px solid var(--gold);transform:rotate(45deg)}
 
   /* CTA */
   .cta{
     background:
-      radial-gradient(ellipse 60% 80% at 50% 0%, rgba(184,146,74,0.12), transparent 70%),
+      radial-gradient(ellipse 60% 80% at 50% 0%, rgba(44,156,196,0.12), transparent 70%),
       var(--ink-soft);
     border:1px solid var(--line);border-radius:24px;
     padding:80px 40px;text-align:center;
@@ -301,49 +303,49 @@
         <svg viewBox="0 0 560 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Семинар ассоциации: докладчик у экрана и аудитория специалистов">
           <defs>
             <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#2C2619"/>
-              <stop offset="1" stop-color="#1A1710"/>
+              <stop offset="0" stop-color="#16323F"/>
+              <stop offset="1" stop-color="#0E2330"/>
             </linearGradient>
             <radialGradient id="glow" cx="50%" cy="18%" r="62%">
-              <stop offset="0" stop-color="#B8924A" stop-opacity="0.24"/>
-              <stop offset="1" stop-color="#B8924A" stop-opacity="0"/>
+              <stop offset="0" stop-color="#2C9CC4" stop-opacity="0.24"/>
+              <stop offset="1" stop-color="#2C9CC4" stop-opacity="0"/>
             </radialGradient>
           </defs>
 
           <!-- panel -->
-          <rect x="8" y="8" width="544" height="524" rx="22" fill="url(#panel)" stroke="#B8924A" stroke-opacity="0.48"/>
+          <rect x="8" y="8" width="544" height="524" rx="22" fill="url(#panel)" stroke="#2C9CC4" stroke-opacity="0.48"/>
           <rect x="8" y="8" width="544" height="524" rx="22" fill="url(#glow)"/>
 
           <!-- presentation screen -->
-          <g stroke="#B8924A" fill="none">
-            <rect x="158" y="66" width="304" height="156" rx="9" stroke-opacity="0.78" stroke-width="1.5" fill="#B8924A" fill-opacity="0.05"/>
+          <g stroke="#2C9CC4" fill="none">
+            <rect x="158" y="66" width="304" height="156" rx="9" stroke-opacity="0.78" stroke-width="1.5" fill="#2C9CC4" fill-opacity="0.05"/>
             <!-- slide title + bullets -->
-            <line x1="186" y1="98" x2="318" y2="98" stroke="#D4B36E" stroke-opacity="0.85" stroke-width="3"/>
-            <line x1="186" y1="124" x2="312" y2="124" stroke="#D4B36E" stroke-opacity="0.42" stroke-width="1.4"/>
-            <line x1="186" y1="146" x2="292" y2="146" stroke="#D4B36E" stroke-opacity="0.42" stroke-width="1.4"/>
-            <line x1="186" y1="168" x2="306" y2="168" stroke="#D4B36E" stroke-opacity="0.42" stroke-width="1.4"/>
-            <circle cx="176" cy="124" r="2.5" fill="#D4B36E" stroke="none" fill-opacity="0.75"/>
-            <circle cx="176" cy="146" r="2.5" fill="#D4B36E" stroke="none" fill-opacity="0.75"/>
-            <circle cx="176" cy="168" r="2.5" fill="#D4B36E" stroke="none" fill-opacity="0.75"/>
+            <line x1="186" y1="98" x2="318" y2="98" stroke="#4FC3E8" stroke-opacity="0.85" stroke-width="3"/>
+            <line x1="186" y1="124" x2="312" y2="124" stroke="#4FC3E8" stroke-opacity="0.42" stroke-width="1.4"/>
+            <line x1="186" y1="146" x2="292" y2="146" stroke="#4FC3E8" stroke-opacity="0.42" stroke-width="1.4"/>
+            <line x1="186" y1="168" x2="306" y2="168" stroke="#4FC3E8" stroke-opacity="0.42" stroke-width="1.4"/>
+            <circle cx="176" cy="124" r="2.5" fill="#4FC3E8" stroke="none" fill-opacity="0.75"/>
+            <circle cx="176" cy="146" r="2.5" fill="#4FC3E8" stroke="none" fill-opacity="0.75"/>
+            <circle cx="176" cy="168" r="2.5" fill="#4FC3E8" stroke="none" fill-opacity="0.75"/>
             <!-- topic target diagram -->
             <circle cx="400" cy="144" r="30" stroke-opacity="0.5"/>
             <circle cx="400" cy="144" r="19" stroke-opacity="0.62"/>
             <circle cx="400" cy="144" r="8" stroke-opacity="0.72"/>
-            <circle cx="400" cy="144" r="2.6" fill="#D4B36E" stroke="none"/>
+            <circle cx="400" cy="144" r="2.6" fill="#4FC3E8" stroke="none"/>
             <!-- screen stand -->
             <line x1="310" y1="222" x2="310" y2="244" stroke-opacity="0.5"/>
             <line x1="288" y1="244" x2="332" y2="244" stroke-opacity="0.5"/>
           </g>
 
           <!-- presenter (points at slide) -->
-          <g stroke="#D4B36E" stroke-opacity="0.95" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="92" cy="250" r="14" fill="#B8924A" fill-opacity="0.10"/>
-            <path d="M72,304 q20,-26 40,0 L108,366 q-16,5 -32,0 Z" fill="#B8924A" fill-opacity="0.08"/>
+          <g stroke="#4FC3E8" stroke-opacity="0.95" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="92" cy="250" r="14" fill="#2C9CC4" fill-opacity="0.10"/>
+            <path d="M72,304 q20,-26 40,0 L108,366 q-16,5 -32,0 Z" fill="#2C9CC4" fill-opacity="0.08"/>
             <path d="M106,302 q34,-34 56,-66" stroke-opacity="0.85"/>
           </g>
 
           <!-- audience, seen from behind, facing the screen -->
-          <g fill="#B8924A" fill-opacity="0.07" stroke="#D4B36E" stroke-width="1.3" stroke-linejoin="round">
+          <g fill="#2C9CC4" fill-opacity="0.07" stroke="#4FC3E8" stroke-width="1.3" stroke-linejoin="round">
             <g stroke-opacity="0.42">
               <g><circle cx="190" cy="324" r="9"/><path d="M168,346 C168,331 212,331 212,346"/></g>
               <g><circle cx="258" cy="324" r="9"/><path d="M236,346 C236,331 280,331 280,346"/></g>
@@ -363,7 +365,7 @@
           </g>
 
           <!-- floor line -->
-          <line x1="46" y1="482" x2="514" y2="482" stroke="#B8924A" stroke-opacity="0.4" stroke-width="1.3"/>
+          <line x1="46" y1="482" x2="514" y2="482" stroke="#2C9CC4" stroke-opacity="0.4" stroke-width="1.3"/>
         </svg>
         <span class="vlabel">Конференции · Семинары · Обучение</span>
       </div>
@@ -392,12 +394,12 @@
         <svg viewBox="0 0 1080 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Шкала классов чистоты ISO 14644">
           <defs>
             <linearGradient id="scale" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#B8924A" stop-opacity="0.25"/>
-              <stop offset="1" stop-color="#D4B36E" stop-opacity="0.9"/>
+              <stop offset="0" stop-color="#2C9CC4" stop-opacity="0.25"/>
+              <stop offset="1" stop-color="#4FC3E8" stop-opacity="0.9"/>
             </linearGradient>
           </defs>
           <!-- ambient particles fading left->right -->
-          <g fill="#B8924A">
+          <g fill="#2C9CC4">
             <circle cx="70" cy="34" r="3" opacity=".55"/><circle cx="120" cy="58" r="2.4" opacity=".5"/><circle cx="95" cy="74" r="2.8" opacity=".5"/><circle cx="160" cy="40" r="2.2" opacity=".45"/><circle cx="190" cy="66" r="2.6" opacity=".4"/><circle cx="230" cy="36" r="2" opacity=".38"/><circle cx="270" cy="60" r="2.3" opacity=".34"/><circle cx="330" cy="44" r="1.9" opacity=".28"/><circle cx="420" cy="56" r="1.8" opacity=".22"/><circle cx="520" cy="40" r="1.6" opacity=".18"/><circle cx="650" cy="54" r="1.5" opacity=".14"/><circle cx="820" cy="42" r="1.4" opacity=".1"/>
           </g>
           <!-- baseline -->
@@ -405,29 +407,29 @@
           <!-- nodes -->
           <g font-family="Fraunces, Georgia, serif" text-anchor="middle">
             <g>
-              <circle cx="120" cy="96" r="9" fill="none" stroke="#B8924A" stroke-width="1.4"/>
-              <text x="120" y="80" fill="#D4B36E" font-size="20">ISO 9</text>
-              <text x="120" y="124" fill="#C9C2B2" font-size="12" font-family="Inter,sans-serif">обычный воздух</text>
+              <circle cx="120" cy="96" r="9" fill="none" stroke="#2C9CC4" stroke-width="1.4"/>
+              <text x="120" y="80" fill="#4FC3E8" font-size="20">ISO 9</text>
+              <text x="120" y="124" fill="#9DB3C0" font-size="12" font-family="Inter,sans-serif">обычный воздух</text>
             </g>
             <g>
-              <circle cx="343" cy="96" r="9" fill="none" stroke="#B8924A" stroke-width="1.4"/>
-              <text x="343" y="80" fill="#D4B36E" font-size="20">ISO 8</text>
-              <text x="343" y="124" fill="#C9C2B2" font-size="12" font-family="Inter,sans-serif">контролируемая зона</text>
+              <circle cx="343" cy="96" r="9" fill="none" stroke="#2C9CC4" stroke-width="1.4"/>
+              <text x="343" y="80" fill="#4FC3E8" font-size="20">ISO 8</text>
+              <text x="343" y="124" fill="#9DB3C0" font-size="12" font-family="Inter,sans-serif">контролируемая зона</text>
             </g>
             <g>
-              <circle cx="566" cy="96" r="9" fill="none" stroke="#B8924A" stroke-width="1.4"/>
-              <text x="566" y="80" fill="#D4B36E" font-size="20">ISO 7</text>
-              <text x="566" y="124" fill="#C9C2B2" font-size="12" font-family="Inter,sans-serif">чистое помещение</text>
+              <circle cx="566" cy="96" r="9" fill="none" stroke="#2C9CC4" stroke-width="1.4"/>
+              <text x="566" y="80" fill="#4FC3E8" font-size="20">ISO 7</text>
+              <text x="566" y="124" fill="#9DB3C0" font-size="12" font-family="Inter,sans-serif">чистое помещение</text>
             </g>
             <g>
-              <circle cx="789" cy="96" r="9" fill="none" stroke="#B8924A" stroke-width="1.4"/>
-              <text x="789" y="80" fill="#D4B36E" font-size="20">ISO 6</text>
-              <text x="789" y="124" fill="#C9C2B2" font-size="12" font-family="Inter,sans-serif">высокая чистота</text>
+              <circle cx="789" cy="96" r="9" fill="none" stroke="#2C9CC4" stroke-width="1.4"/>
+              <text x="789" y="80" fill="#4FC3E8" font-size="20">ISO 6</text>
+              <text x="789" y="124" fill="#9DB3C0" font-size="12" font-family="Inter,sans-serif">высокая чистота</text>
             </g>
             <g>
-              <circle cx="966" cy="96" r="11" fill="#B8924A" fill-opacity="0.18" stroke="#D4B36E" stroke-width="1.6"/>
-              <text x="966" y="78" fill="#F4EEE2" font-size="20">ISO 5</text>
-              <text x="966" y="124" fill="#C9C2B2" font-size="12" font-family="Inter,sans-serif">критические процессы</text>
+              <circle cx="966" cy="96" r="11" fill="#2C9CC4" fill-opacity="0.18" stroke="#4FC3E8" stroke-width="1.6"/>
+              <text x="966" y="78" fill="#E9F1F5" font-size="20">ISO 5</text>
+              <text x="966" y="124" fill="#9DB3C0" font-size="12" font-family="Inter,sans-serif">критические процессы</text>
             </g>
           </g>
         </svg>
@@ -470,7 +472,7 @@
       </div>
       <div class="cards">
         <div class="card reveal">
-          <div class="ico"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z" stroke-opacity="0.5"/><path d="M6 5h7l4 4v12H6z"/><path d="M13 5v4h4"/><path d="M9 13h6M9 16.5h6"/><path d="M9 9.5l1.4 1.4 2.4-2.6" stroke="#D4B36E"/></svg></div>
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z" stroke-opacity="0.5"/><path d="M6 5h7l4 4v12H6z"/><path d="M13 5v4h4"/><path d="M9 13h6M9 16.5h6"/><path d="M9 9.5l1.4 1.4 2.4-2.6" stroke="#4FC3E8"/></svg></div>
           <h3>Стандарты и методики</h3>
           <p>Адаптация и продвижение международных норм ISO 14644, GMP и ESD-стандартов для условий казахстанских предприятий, единые подходы к классификации и контролю.</p>
         </div>
