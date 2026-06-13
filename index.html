@@ -153,8 +153,10 @@
     letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
     background:rgba(22,20,15,.7);padding:7px 12px;border:1px solid var(--line);border-radius:30px;
   }
-  .hero h1{font-size:clamp(2.4rem,5.2vw,4.4rem);font-weight:400;letter-spacing:-.01em;margin-bottom:30px}
+  .hero h1{font-size:clamp(2.4rem,5.2vw,4.4rem);font-weight:400;letter-spacing:-.01em;margin-bottom:18px}
   .hero h1 em{font-style:italic;color:var(--accent-light)}
+  .hero .slogan{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.3rem,2.5vw,1.95rem);color:var(--gold-light);margin-bottom:28px;line-height:1.25;display:flex;align-items:center;gap:16px}
+  .hero .slogan::before{content:"";width:34px;height:1px;background:var(--accent);flex-shrink:0}
   .hero p.lead{font-size:clamp(1.05rem,1.8vw,1.32rem);color:var(--cream-dim);max-width:620px;font-weight:300;margin-bottom:44px}
   .hero-actions{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
   .btn-primary{
@@ -293,6 +295,7 @@
       <div class="hero-copy">
         <span class="eyebrow">CCCS · Контроль контаминации · Казахстан</span>
         <h1>Казахстанская Ассоциация <em>Контроля Контаминации</em></h1>
+        <p class="slogan">Мировой стандарт — казахстанский уровень</p>
         <p class="lead">Профессиональное объединение специалистов и предприятий, для которых чистота среды — условие качества. Мы развиваем культуру чистых помещений, контроля частиц и электростатической безопасности в Казахстане.</p>
         <div class="hero-actions">
           <a href="#membership" class="btn-primary">Стать членом ассоциации</a>
@@ -581,7 +584,8 @@
   <div class="wrap foot">
     <div>
       <div class="brand"><span class="mark">КК</span> КАКК</div>
-      <p style="margin-top:16px;max-width:380px">Казахстанская Ассоциация Контроля Контаминации — Contamination Control &amp; Cleanroom Society of Kazakhstan (CCCS).</p>
+      <p style="margin-top:14px;font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:var(--accent-light)">Чистота, по которой равняется мир.</p>
+      <p style="margin-top:12px;max-width:380px">Казахстанская Ассоциация Контроля Контаминации — Contamination Control &amp; Cleanroom Society of Kazakhstan (CCCS).</p>
     </div>
     <div class="foot-links">
       <a href="#about">Об ассоциации</a>
